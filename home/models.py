@@ -13,3 +13,10 @@ class Doctors(models.Model):
     doct_image=models.ImageField(upload_to='doctor')
     def __str__(self):
         return self.doct_name
+class Booking(models.Model):
+    p_name=models.CharField(max_length=250)
+    p_phone=models.IntegerField(max_length=9)
+    p_email=models.CharField(max_length=250)
+    doc_name=models.ForeignKey(Doctors,on_delete=models.CASCADE)
+    booking_date=models.DateField()
+    booked_on=models.DateField(auto_now=True)
