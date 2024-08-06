@@ -5,18 +5,17 @@ Doctor
 {% endblock %}
 
 {% block content %}
-<div class="container text-center">
-{% for i in d %}
-<h1>{{i.doct_name}}</h1>
-
-<div class="card text-center" style="width: 18rem; display:inline-block;">
-    <img src="{{i.doct_image.url}}" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Dr.{{i.doct_name}}</h5>
-      <p class="card-text">{{i.doct_spec}}</p>
-       <h6>{{i.dept_name}} Department</h6>
+<h1 class="text-center">Our Doctors</h1>
+<div class="container d-flex flex-wrap justify-content-center bg-light">
+    {% for i in d %}
+    <div class="card text-center mx-3 my-3" style="width: 18rem;">
+        <img src="{{i.doct_image.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Dr. {{i.doct_name}}</h5>
+            <p class="card-text">{{i.doct_spec}}</p>
+            <h6>{{i.dept_name}} Department</h6>
+        </div>
     </div>
-  </div>
-{% endfor %}
+    {% endfor %}
 </div>
 {% endblock content %}
